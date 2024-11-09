@@ -1,0 +1,17 @@
+name: Testes com Jest
+
+on: pull_request
+
+jobs:
+  teste-com-jest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 21.x
+      - name: Rodando npm install e npm test
+        run: |
+          npm install
+          npm test
